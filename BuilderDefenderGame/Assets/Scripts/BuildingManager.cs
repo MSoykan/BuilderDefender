@@ -17,7 +17,6 @@ public class BuildingManager : MonoBehaviour {
         }
         buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
         Debug.Log("Buildings: " + Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name));
-        activeBuildingType = buildingTypeList.list[0];
     }
 
     private void Start() {
@@ -27,15 +26,11 @@ public class BuildingManager : MonoBehaviour {
 
     private void Update() {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) {
-            Instantiate(activeBuildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
+            if (activeBuildingType != null) {
+                Instantiate(activeBuildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
+            }
         }
 
-        //if (Input.GetKeyDown(KeyCode.T)) {
-        //    activeBuildingType = buildingTypeList.list[0];
-        //}
-        //if (Input.GetKeyDown(KeyCode.Y)) {
-        //    activeBuildingType = buildingTypeList.list[1];
-        //}
     }
 
     private Vector3 GetMouseWorldPosition() {
