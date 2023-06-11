@@ -27,6 +27,7 @@ public class BuildingTypeSelectUI : MonoBehaviour {
         arrowButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(40 + offSetAmount * index, +30);
 
         arrowButton.Find("image").GetComponent<Image>().sprite = arrowSprite;
+        arrowButton.Find("image").GetComponent<RectTransform>().sizeDelta += new Vector2(0, -30);
 
         arrowButton.GetComponent<Button>().onClick.AddListener(() => {
             BuildingManager.Instance.SetActiveBuildingType(null);
@@ -43,7 +44,6 @@ public class BuildingTypeSelectUI : MonoBehaviour {
             btnTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(40 + offSetAmount * index, +30);
 
             btnTransform.Find("image").GetComponent<Image>().sprite = buildingType.sprite;
-            btnTransform.Find("image").GetComponent<RectTransform>().sizeDelta = new Vector2(0,-30);
 
             btnTransform.GetComponent<Button>().onClick.AddListener(() => {
                 BuildingManager.Instance.SetActiveBuildingType(buildingType);
@@ -54,6 +54,15 @@ public class BuildingTypeSelectUI : MonoBehaviour {
             Debug.Log("Index :: " + index);
             index++;
         }
+    }
+
+    private void Start() {
+        BuildingManager.Instance.OnActiveBuildingTypeChanged += BuildingManager_OnActiveBuildingTypeChanged;
+        UpdateActiveBuildingTypeButton();
+    }
+
+    private void BuildingManager_OnActiveBuildingTypeChanged(object sender, BuildingManager.OnActiveBuildingTypeChangedEventArgs e) {
+        UpdateActiveBuildingTypeButton();
     }
 
     private void Update() {

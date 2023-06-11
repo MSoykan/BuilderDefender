@@ -23,7 +23,7 @@ public class ResourcesUI : MonoBehaviour {
         foreach (ResourceTypeSO resourceType in resourceTypeList.list) {
             Transform resourceTransform = Instantiate(resourceTemplate, transform);
             resourceTransform.gameObject.SetActive(true);
-
+                
             float offSetAmount = -160f;
             resourceTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-80+offSetAmount*index ,-60);
 
