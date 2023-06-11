@@ -8,7 +8,6 @@ public static class UtilsClass {
     public static Vector3 GetMouseWorldPosition() {
         if(mainCamera == null) {
             mainCamera = Camera.main;
-            Debug.Log("sürekli null");
         }
         Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPosition.z = 0f;

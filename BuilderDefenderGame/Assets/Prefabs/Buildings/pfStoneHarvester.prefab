@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6915651518820626911}
   - component: {fileID: 6589544168310322588}
+  - component: {fileID: 7689410112356328037}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 793ca27a5a3378149aaa12abe85933f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2263e91ebcd2a254dab5f4caccb4a7af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7689410112356328037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560318710319327569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe832ff242dd684cb50c5a7ba53e879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runOnce: 1
+  positionOffset: 0
 --- !u!1 &6892087453602138605
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,10 +108,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2814814788423008474}
-  - component: {fileID: -861279458004412016}
-  - component: {fileID: -7424892808953652549}
+  - component: {fileID: -3968246381789281307}
+  - component: {fileID: 8608742093093327751}
   m_Layer: 0
-  m_Name: pfWoodHarvester
+  m_Name: pfStoneHarvester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +133,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-861279458004412016
+--- !u!114 &-3968246381789281307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93c43efaf2d44b4faa10f5fdf718f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: {fileID: 11400000, guid: ff7b913d35e89694fbf08a5a5b5a978b, type: 2}
---- !u!114 &-7424892808953652549
+  buildingType: {fileID: 11400000, guid: 35ada1c973a376849a4e298614f49624, type: 2}
+--- !u!114 &8608742093093327751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
