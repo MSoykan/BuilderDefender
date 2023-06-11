@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251d758c24788da4ebb6064b02c08a40, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  resourcePrefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 0b991b4895d956f4ea5f954ab13b7529, type: 3}
   resourceName: Wood
