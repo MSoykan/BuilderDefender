@@ -220,6 +220,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2814814788423008474}
     m_Modifications:
+    - target: {fileID: -5066903763816160543, guid: abf35834c95282a4a82d14e79b8fe824, type: 3}
+      propertyPath: resourceGenerator
+      value: 
+      objectReference: {fileID: -7424892808953652549}
     - target: {fileID: 5911165530119994919, guid: abf35834c95282a4a82d14e79b8fe824, type: 3}
       propertyPath: m_Name
       value: pfResourceGeneratorOverlay

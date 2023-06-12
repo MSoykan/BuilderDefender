@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class BuildingTypeSelectUI : MonoBehaviour {
 
     [SerializeField] private Sprite arrowSprite;
-    [SerializeField] private List<BuildingTypeSO>  ignoreBuildingTypeList;
+    [SerializeField] private List<BuildingTypeSO> ignoreBuildingTypeList;
 
     private Dictionary<BuildingTypeSO, Transform> btnTransformDictionary;
     private Transform arrowButton;
@@ -34,6 +34,17 @@ public class BuildingTypeSelectUI : MonoBehaviour {
             BuildingManager.Instance.SetActiveBuildingType(null);
         });
 
+        MouseEnterExitEvents mouseEnterExitEvents = arrowButton.GetComponent<MouseEnterExitEvents>();
+        mouseEnterExitEvents.OnMouseEnter += (object sender, EventArgs e) => {
+            TooltipUI.Instance.Show("Arrow");
+        };
+
+        mouseEnterExitEvents.OnMouseExit += (object sender, EventArgs e) => {
+            TooltipUI.Instance.Hide();
+        };
+
+
+
 
         Debug.Log("Index :: " + index);
         index++;
@@ -53,12 +64,25 @@ public class BuildingTypeSelectUI : MonoBehaviour {
                 BuildingManager.Instance.SetActiveBuildingType(buildingType);
             });
 
+            mouseEnterExitEvents = btnTransform.GetComponent<MouseEnterExitEvents>();
+            mouseEnterExitEvents.OnMouseEnter += (object sender, EventArgs e) => {
+                TooltipUI.Instance.Show(buildingType.nameString + "\n" +buildingType.GetConstructionResourceCostString());
+            };
+
+            mouseEnterExitEvents.OnMouseExit += (object sender, EventArgs e) => {
+                TooltipUI.Instance.Hide();
+            };
+
             btnTransformDictionary[buildingType] = btnTransform;
 
             Debug.Log("Index :: " + index);
             index++;
         }
     }
+
+    //private void MouseEnterExitEvents_OnMouseEnter(object sender, EventArgs e) {
+    //    TooltipUI.Instance.Show(buildingType.nameString);
+    //}
 
     private void Start() {
         BuildingManager.Instance.OnActiveBuildingTypeChanged += BuildingManager_OnActiveBuildingTypeChanged;
@@ -88,4 +112,6 @@ public class BuildingTypeSelectUI : MonoBehaviour {
             btnTransformDictionary[activeBuildingType].Find("selected").gameObject.SetActive(true);
         }
     }
+
+
 }
