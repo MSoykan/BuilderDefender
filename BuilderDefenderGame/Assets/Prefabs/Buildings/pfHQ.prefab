@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6915651518820626911}
   - component: {fileID: 6589544168310322588}
-  - component: {fileID: 7689410112356328037}
+  - component: {fileID: 7217811727604963074}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2263e91ebcd2a254dab5f4caccb4a7af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7030b8e3eb49e8440ae8eb3ec8b45d05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7689410112356328037
+--- !u!114 &7217811727604963074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,11 +108,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2814814788423008474}
-  - component: {fileID: -3968246381789281307}
-  - component: {fileID: 8608742093093327751}
-  - component: {fileID: 1023614230936391356}
+  - component: {fileID: -861279458004412016}
+  - component: {fileID: -7424892808953652549}
+  - component: {fileID: 43259397698736758}
   m_Layer: 0
-  m_Name: pfStoneHarvester
+  m_Name: pfHQ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-3968246381789281307
+--- !u!114 &-861279458004412016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93c43efaf2d44b4faa10f5fdf718f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: {fileID: 11400000, guid: 35ada1c973a376849a4e298614f49624, type: 2}
---- !u!114 &8608742093093327751
+  buildingType: {fileID: 11400000, guid: a308bd3898632da4bb79f6ae4f06961b, type: 2}
+--- !u!114 &-7424892808953652549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db71739565cd324499701da75db2e0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1023614230936391356
+--- !u!61 &43259397698736758
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.10002887}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -183,5 +183,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.417115, y: 4.9636164}
+  m_Size: {x: 6.317311, y: 4.908437}
   m_EdgeRadius: 0

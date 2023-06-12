@@ -17,7 +17,7 @@ public class ResourceManager : MonoBehaviour {
 
         ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
 
-        Debug.Log("Resources:  " + Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name));
+        //Debug.Log("Resources:  " + Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name));
 
         foreach (ResourceTypeSO resourceType in resourceTypeList.list) {
             resourceAmountDictionary[resourceType] = 0;
