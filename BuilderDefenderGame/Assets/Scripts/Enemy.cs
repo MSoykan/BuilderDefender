@@ -6,8 +6,6 @@ public class Enemy : MonoBehaviour {
 
     public static Enemy Create(Vector3 position) {
         Transform pfEnemy = Resources.Load<Transform>("pfEnemy");
-        Debug.Log(pfEnemy + " enemy prefab is :" + Resources.Load<Transform>("pfEnemy"));
-        Debug.Log(pfEnemy + " arrow prefab is :" + Resources.Load<Transform>("pfArrowProjectile"));
         Transform enemyTransform = Instantiate(pfEnemy, position, Quaternion.identity);
 
         Enemy enemy = enemyTransform.GetComponent<Enemy>();

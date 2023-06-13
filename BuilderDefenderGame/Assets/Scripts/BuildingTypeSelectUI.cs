@@ -75,7 +75,6 @@ public class BuildingTypeSelectUI : MonoBehaviour {
 
             btnTransformDictionary[buildingType] = btnTransform;
 
-            Debug.Log("Index :: " + index);
             index++;
         }
     }
