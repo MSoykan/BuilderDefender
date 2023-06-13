@@ -55,15 +55,17 @@ public class ResourceManager : MonoBehaviour {
         return resourceAmountDictionary[resourceType];
     }
 
-    public bool CanAfford(ResourceAmount[] resourceAmountArray) {
+    public bool CanAfford(ResourceAmount[] resourceAmountArray, out string errorMessage) {
         foreach(ResourceAmount resourceAmount in resourceAmountArray) {
             if(GetResourceAmount(resourceAmount.resourceType)>= resourceAmount.amount) {
                 // Can afford this.
             }else {
                 //Cannot afford this.
+                errorMessage = "Insufficient funds.";
                 return false;
             }
         }
+        errorMessage = "";
         return true;
     }
 
