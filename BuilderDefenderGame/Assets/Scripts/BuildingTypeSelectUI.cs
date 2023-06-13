@@ -46,7 +46,7 @@ public class BuildingTypeSelectUI : MonoBehaviour {
 
 
 
-        Debug.Log("Index :: " + index);
+        //Debug.Log("Index :: " + index);
         index++;
         foreach (BuildingTypeSO buildingType in buildingTypeList.list) {
             if (ignoreBuildingTypeList.Contains(buildingType)) {

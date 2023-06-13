@@ -30,7 +30,7 @@ public class ResourcesUI : MonoBehaviour {
             resourceTransform.Find("image").GetComponent<Image>().sprite = resourceType.sprite;
 
             resourceTypeTransFromDictionary[resourceType] = resourceTransform;
-            Debug.Log("Index :: " + index);
+            //Debug.Log("Index :: " + index);
             index++;
         }
     }

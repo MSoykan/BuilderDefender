@@ -23,7 +23,6 @@ public class BuildingManager : MonoBehaviour {
             Instance = this;
         }
         buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
-        Debug.Log("Buildings: " + Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name));
     }
 
     private void Start() {
