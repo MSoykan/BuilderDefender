@@ -19,10 +19,10 @@ public class Building : MonoBehaviour
     }
 
     public void Update() {
-        if(Input.GetKeyDown(KeyCode.T)) {
-            healthSystem.Damage(30);
-            Debug.Log(healthSystem.GetHealthAmount());  
-        }
+        //if(Input.GetKeyDown(KeyCode.T)) {
+        //    healthSystem.Damage(30);
+        //    Debug.Log(healthSystem.GetHealthAmount());  
+        //}
     }
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {

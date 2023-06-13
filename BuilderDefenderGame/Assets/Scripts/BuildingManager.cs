@@ -14,6 +14,8 @@ public class BuildingManager : MonoBehaviour {
         public BuildingTypeSO activeBuildingType;
     }
 
+    [SerializeField] private Building hqBuilding;
+
     private Camera mainCamera;
     private BuildingTypeListSO buildingTypeList;
     private BuildingTypeSO activeBuildingType;
@@ -46,13 +48,13 @@ public class BuildingManager : MonoBehaviour {
                 }
             }
         }
+        if(Input.GetKeyDown(KeyCode.T)) {
+            Vector3 enemySpawnPosition = UtilsClass.GetMouseWorldPosition() + UtilsClass.GetRandomDir() * 5f;
+            Enemy.Create(enemySpawnPosition);
+        }
     }
 
-    //private Vector3 GetMouseWorldPosition() {
-    //    Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-    //    mouseWorldPosition.z = 0f;
-    //    return mouseWorldPosition;
-    //}
+    
 
     public void SetActiveBuildingType(BuildingTypeSO buildingType) {
         activeBuildingType = buildingType;
@@ -103,6 +105,9 @@ public class BuildingManager : MonoBehaviour {
         }
         errorMessage = "Too far away from base borders.";
         return false; ;
+    }
+    public Building GetHQBuilding() {
+        return hqBuilding;
     }
 
 }
