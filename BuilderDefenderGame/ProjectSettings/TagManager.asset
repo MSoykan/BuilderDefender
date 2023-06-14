@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -41,12 +41,12 @@ TagManager:
   - name: Background
     uniqueID: 721642867
     locked: 0
+  - name: Minimap
+    uniqueID: 620245951
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Top
     uniqueID: 2852313557
-    locked: 0
-  - name: New Layer 3
-    uniqueID: 620245951
     locked: 0
