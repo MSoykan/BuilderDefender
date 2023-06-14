@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ResourcesUI : MonoBehaviour {
-
+    
     //[SerializeField] private Transform resourceTemplate;
 
     private ResourceTypeListSO resourceTypeList;
@@ -25,7 +25,7 @@ public class ResourcesUI : MonoBehaviour {
             resourceTransform.gameObject.SetActive(true);
                 
             float offSetAmount = -160f;
-            resourceTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-80+offSetAmount*index ,-60);
+            resourceTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-120+offSetAmount*index ,-60);
 
             resourceTransform.Find("image").GetComponent<Image>().sprite = resourceType.sprite;
 
