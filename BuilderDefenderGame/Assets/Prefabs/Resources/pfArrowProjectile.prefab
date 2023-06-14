@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfffb4268e191e4eab12bfb771be6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetEnemy: {fileID: 0}
 --- !u!1 &7392209978965775160
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +146,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: cea67d9b69b9fb94f8c72d4b341eb33b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

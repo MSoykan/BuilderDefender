@@ -38,9 +38,9 @@ public class BuildingGhost : MonoBehaviour {
         transform.position = UtilsClass.GetMouseWorldPosition();
     }
 
-    private void Show(Sprite ghostSprite) {
+    private void Show(Sprite sprite) {
         spriteGameObject.SetActive(true);
-        spriteGameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
+        spriteGameObject.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
     private void Hide() {

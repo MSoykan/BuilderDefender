@@ -7,11 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HQWindow
+  m_Name: SpriteEmission
   m_Shader: {fileID: -6465566751694194690, guid: ccb8ac2353186da4f8ca5a98bb720826, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - ETC1_EXTERNAL_ALPHA
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -54,7 +53,7 @@ Material:
     - _EnableExternalAlpha: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1.3314528, g: 1.0461416, b: 0.095103785, a: 0}
+    - _EmissionColor: {r: 0.97172785, g: 0.1000308, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
