@@ -26,7 +26,7 @@ public class EnemyWaveUI : MonoBehaviour {
     }
 
     private void EnemyWaveManager_OnWaveNumberChanged(object sender, System.EventArgs e) {
-        Debug.Log("Event triggered");
+        //Debug.Log("Event triggered");
         SetWaveNumberText("Wave " + enemyWaveManager.GetWaveNumber());
     }
 
