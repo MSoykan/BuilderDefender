@@ -22,7 +22,7 @@ public class BuildingRepairButton : MonoBehaviour {
                 //Can afford repairs
                 Debug.Log("Can afford repairs!");
                 ResourceManager.Instance.SpendResources(resourceAmount);
-                healthSystem.RepairFull();
+                healthSystem.HealFull();
             }
             else {
                 //Cannot afford repairs!

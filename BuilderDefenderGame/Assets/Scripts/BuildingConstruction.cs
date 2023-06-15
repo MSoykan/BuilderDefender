@@ -37,6 +37,7 @@ public class BuildingConstruction : MonoBehaviour
         if (constructionTimer <= 0f) {
             Debug.Log("Ding");
             Instantiate(buildingType.prefab, transform.position, Quaternion.identity);
+            SoundManager.instance.PlaySound(SoundManager.Sound.BuildingPlaced, .5f);
             Destroy(gameObject);
         }
     }

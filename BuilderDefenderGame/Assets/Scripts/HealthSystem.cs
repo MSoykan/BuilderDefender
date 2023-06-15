@@ -26,13 +26,13 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    public void Repair( int healAmount) {
+    public void Heal( int healAmount) {
         healthAmount += healAmount;
         healthAmount = Mathf.Clamp(healthAmount, 0 , healthAmountMax);
         OnRepaired?.Invoke(this, EventArgs.Empty);
     }
 
-    public void RepairFull() {
+    public void HealFull() {
         healthAmount += healthAmountMax;
         healthAmount = Mathf.Clamp(healthAmount, 0, healthAmountMax);
         OnRepaired?.Invoke(this, EventArgs.Empty);

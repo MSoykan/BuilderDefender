@@ -38,6 +38,7 @@ public class Building : MonoBehaviour
 
     private void HealthSystem_OnDamaged(object sender, System.EventArgs e) {
         ShowBuildingRepairButton();
+        SoundManager.instance.PlaySound(SoundManager.Sound.BuildingDamaged, .5f);
     }
 
     public void Update() {
@@ -46,6 +47,7 @@ public class Building : MonoBehaviour
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {
         Destroy(gameObject);
+        SoundManager.instance.PlaySound(SoundManager.Sound.BuildingDestroyed, .5f);
     }
 
     private void OnMouseEnter() {
