@@ -7,12 +7,15 @@ public class Building : MonoBehaviour
     private BuildingTypeSO buildingType;
     private HealthSystem healthSystem;
     private Transform buildingDemolishBtn;
+    private Transform buildingRepairBtn;
 
     private void Awake() {
         buildingDemolishBtn = transform.Find("pfBuildingDemolishBtn");
-        if(buildingDemolishBtn != null) {
-        buildingDemolishBtn.gameObject.SetActive(false);
-        }
+        buildingRepairBtn = transform.Find("pfBuildingRepairBtn");
+
+
+        HideBuildingDemolishButton();
+        HideBuildingRepairButton();
     }
 
     private void Start() {
@@ -20,8 +23,21 @@ public class Building : MonoBehaviour
         healthSystem = GetComponent<HealthSystem>();
 
         healthSystem.SetHealthAmountMax(buildingType.healthAmountMax, true);
+        healthSystem.OnDamaged += HealthSystem_OnDamaged;
+
+        healthSystem.OnRepaired += HealthSystem_OnRepaired;
 
         healthSystem.OnDied += HealthSystem_OnDied;
+    }
+
+    private void HealthSystem_OnRepaired(object sender, System.EventArgs e) {
+        if(healthSystem.IsFullHealth()) {
+            HideBuildingRepairButton();
+        }
+    }
+
+    private void HealthSystem_OnDamaged(object sender, System.EventArgs e) {
+        ShowBuildingRepairButton();
     }
 
     public void Update() {
@@ -33,7 +49,7 @@ public class Building : MonoBehaviour
     }
 
     private void OnMouseEnter() {
-        ShowBuildingDemolishButton();
+        ShowBuildingDemolishButton();   
     }
     private void OnMouseExit() {
         HideBuildingDemolishButton();
@@ -48,6 +64,18 @@ public class Building : MonoBehaviour
     private void HideBuildingDemolishButton() {
         if (buildingDemolishBtn != null) {
             buildingDemolishBtn.gameObject.SetActive(false);
+        }
+    }
+
+    private void ShowBuildingRepairButton() {
+        if (buildingRepairBtn != null) {
+            buildingRepairBtn.gameObject.SetActive(true);
+        }
+    }
+
+    private void HideBuildingRepairButton() {
+        if (buildingRepairBtn != null) {
+            buildingRepairBtn.gameObject.SetActive(false);
         }
     }
 }
