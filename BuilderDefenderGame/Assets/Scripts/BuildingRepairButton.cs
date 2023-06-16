@@ -10,7 +10,7 @@ public class BuildingRepairButton : MonoBehaviour {
 
     private void Awake() {
         transform.Find("button").GetComponent<Button>().onClick.AddListener(() => {
-            Debug.Log("Tring to repair! CLicked button.");
+            Debug.Log("Trying to repair! CLicked button.");
             int missingHealth = healthSystem.GetHealthAmountMax() - healthSystem.GetHealthAmount(); ;
             int repairCost = missingHealth / 2;
 

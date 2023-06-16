@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
@@ -16,6 +17,7 @@ public class SoundManager : MonoBehaviour {
     }
     private AudioSource audioSource;
     private Dictionary<Sound, AudioClip> soundAudioClipDictionary;
+    private float volume = .5f;
 
     private void Awake() {
         instance = this;
@@ -29,6 +31,21 @@ public class SoundManager : MonoBehaviour {
     }
 
     public void PlaySound(Sound sound, float volumeScale) {
-        audioSource.PlayOneShot(soundAudioClipDictionary[sound], volumeScale);
+        audioSource.PlayOneShot(soundAudioClipDictionary[sound], volume);
+    }
+
+    public float GetVolume() {
+        return volume;
+    }
+
+    public void IncreaseVolume() {
+        volume += .1f;
+        volume = Mathf.Clamp01(volume);
+    }
+
+    public void DecreaseVolume() {
+        volume -= .1f;
+        volume = Mathf.Clamp01(volume);
+
     }
 }

@@ -47,7 +47,7 @@ public class BuildingManager : MonoBehaviour {
                         ResourceManager.Instance.SpendResources(activeBuildingType.constructionResourceCostArray);
                         //Instantiate(activeBuildingType.prefab, UtilsClass.GetMouseWorldPosition(), Quaternion.identity);
                         BuildingConstruction.Create(UtilsClass.GetMouseWorldPosition(), activeBuildingType);
-                        SoundManager.instance.PlaySound(SoundManager.Sound.BuildingPlaced, .5f);
+                        SoundManager.instance.PlaySound(SoundManager.Sound.EnemyHit, .5f);
                     }
                     else {
                         TooltipUI.Instance.Show(canAffordErrorMessage, new TooltipUI.TooltipTimer { timer = 2f});
