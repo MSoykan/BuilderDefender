@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
+    public event EventHandler OnHealthAmountMaxChanged;
     public event EventHandler OnDamaged;
     public event EventHandler OnDied;
     public event EventHandler OnRepaired;   
