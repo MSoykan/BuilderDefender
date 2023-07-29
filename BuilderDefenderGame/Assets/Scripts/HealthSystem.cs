@@ -64,6 +64,7 @@ public class HealthSystem : MonoBehaviour
         if (updateHealthAmount) {
             healthAmount = healthAmountMax;
         }
+        OnHealthAmountMaxChanged?.Invoke(this, EventArgs.Empty);
     
     }
 

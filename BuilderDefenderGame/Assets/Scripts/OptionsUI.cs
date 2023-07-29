@@ -37,6 +37,11 @@ public class OptionsUI : MonoBehaviour {
             ToggleVisible();
             GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene);
         });
+
+        transform.Find("edgeScrollingToggle").GetComponent<Toggle>().onValueChanged.AddListener((bool set) => {
+            CameraHandler.Instance.SetEdgeScrolling(set);
+        });
+
     }
 
     private void UpdateText() {
@@ -47,6 +52,8 @@ public class OptionsUI : MonoBehaviour {
     private void Start() {
         gameObject.SetActive(false);
         UpdateText();
+
+        transform.Find("edgeScrollingToggle").GetComponent<Toggle>().SetIsOnWithoutNotify(CameraHandler.Instance.GetEdgeScrolling());   
     }
 
     public void ToggleVisible() {
