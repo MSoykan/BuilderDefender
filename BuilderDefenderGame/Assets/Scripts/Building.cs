@@ -46,6 +46,7 @@ public class Building : MonoBehaviour
     }
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {
+        Instantiate(Resources.Load<Transform>("pfBuildingPlacedParticles"), transform.position, Quaternion.identity);
         Destroy(gameObject);
         SoundManager.instance.PlaySound(SoundManager.Sound.BuildingDestroyed, .5f);
     }
