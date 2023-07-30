@@ -40,6 +40,7 @@ public class Building : MonoBehaviour
         ShowBuildingRepairButton();
         SoundManager.instance.PlaySound(SoundManager.Sound.BuildingDamaged, .5f);
         CinemachineShake.Instance.ShakeCamera(7f, .15f);
+        ChromaticAberrationEffect.Instance.SetWeight(1f);
     }
 
     public void Update() {
@@ -51,6 +52,7 @@ public class Building : MonoBehaviour
         Destroy(gameObject);
         SoundManager.instance.PlaySound(SoundManager.Sound.BuildingDestroyed, .5f);
         CinemachineShake.Instance.ShakeCamera(10f, .2f);
+        ChromaticAberrationEffect.Instance.SetWeight(1f);
     }
 
     private void OnMouseEnter() {
