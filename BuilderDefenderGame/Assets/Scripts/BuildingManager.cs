@@ -36,7 +36,7 @@ public class BuildingManager : MonoBehaviour {
 
     private void HQ_OnDied(object sender, EventArgs e) {
         SoundManager.instance.PlaySound(SoundManager.Sound.GameOver, 1f);
-        GameOverUI.Instance.Show(); 
+        GameOverUI.Instance.Show();
     }
 
     private void Update() {
@@ -50,16 +50,17 @@ public class BuildingManager : MonoBehaviour {
                         SoundManager.instance.PlaySound(SoundManager.Sound.EnemyHit, .5f);
                     }
                     else {
-                        TooltipUI.Instance.Show(canAffordErrorMessage, new TooltipUI.TooltipTimer { timer = 2f});
+                        TooltipUI.Instance.Show(canAffordErrorMessage, new TooltipUI.TooltipTimer { timer = 2f });
                     }
-                }else {
-                    TooltipUI.Instance.Show(errorMessage, new TooltipUI.TooltipTimer { timer = 2f }) ;
+                }
+                else {
+                    TooltipUI.Instance.Show(errorMessage, new TooltipUI.TooltipTimer { timer = 2f });
                 }
             }
         }
     }
 
-    
+
 
     public void SetActiveBuildingType(BuildingTypeSO buildingType) {
         activeBuildingType = buildingType;
@@ -97,6 +98,18 @@ public class BuildingManager : MonoBehaviour {
                 }
             }
         }
+
+        if (buildingType.hasResourceGeneratorData) {
+            ResourceGeneratorData resourceGeneratorData = buildingType.resourceGeneratorData;
+            int nearbyResourceAmount = ResourceGenerator.GetNearbyResourceAmount(resourceGeneratorData, position);
+
+            if (nearbyResourceAmount == 0) {
+                errorMessage = "There are no nearby Resource Nodes!";
+                return false;
+            }
+        }
+
+
         float maxConstrucitonRadius = 25;
         collider2DArray = Physics2D.OverlapCircleAll(position, maxConstrucitonRadius);
 
