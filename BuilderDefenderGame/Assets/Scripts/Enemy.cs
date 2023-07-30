@@ -26,18 +26,21 @@ public class Enemy : MonoBehaviour {
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDied += HealthSystem_OnDied;
         healthSystem.OnDamaged += HealthSystem_OnDamaged;
+
         lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
     }
 
     private void HealthSystem_OnDamaged(object sender, System.EventArgs e) {
         SoundManager.instance.PlaySound(SoundManager.Sound.EnemyHit, 1f);
         Debug.Log("Playing enemy sound:" + SoundManager.Sound.EnemyHit.ToString());
+        CinemachineShake.Instance.ShakeCamera(5f, .1f);
     }
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {
         SoundManager.instance.PlaySound(SoundManager.Sound.EnemyDie, 1f);
         Instantiate(Resources.Load<Transform>("pfEnemyDieParticles"), transform.position, Quaternion.identity);
         Destroy(gameObject);
+        CinemachineShake.Instance.ShakeCamera(7f ,.15f);
     }
 
     private void Update() {
