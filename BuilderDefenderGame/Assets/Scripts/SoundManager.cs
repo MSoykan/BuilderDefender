@@ -24,6 +24,8 @@ public class SoundManager : MonoBehaviour {
 
         audioSource = GetComponent<AudioSource>();
 
+        volume = PlayerPrefs.GetFloat("soundVolume", .5f);
+
         soundAudioClipDictionary = new Dictionary<Sound, AudioClip>();
         foreach (Sound sound in System.Enum.GetValues(typeof(Sound))) {
             soundAudioClipDictionary[sound] = Resources.Load<AudioClip>(sound.ToString());
