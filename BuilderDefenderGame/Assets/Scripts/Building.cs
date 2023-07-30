@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour
-{
+public class Building : MonoBehaviour {
     private BuildingTypeSO buildingType;
     private HealthSystem healthSystem;
     private Transform buildingDemolishBtn;
@@ -31,7 +30,7 @@ public class Building : MonoBehaviour
     }
 
     private void HealthSystem_OnRepaired(object sender, System.EventArgs e) {
-        if(healthSystem.IsFullHealth()) {
+        if (healthSystem.IsFullHealth()) {
             HideBuildingRepairButton();
         }
     }
@@ -39,8 +38,10 @@ public class Building : MonoBehaviour
     private void HealthSystem_OnDamaged(object sender, System.EventArgs e) {
         ShowBuildingRepairButton();
         SoundManager.instance.PlaySound(SoundManager.Sound.BuildingDamaged, .5f);
-        CinemachineShake.Instance.ShakeCamera(7f, .15f);
-        ChromaticAberrationEffect.Instance.SetWeight(1f);
+        CinemachineShake.Instance.ShakeCamera(7f, .12f);
+        if (healthSystem.GetHealthAmountNormalized() < .3) {
+            ChromaticAberrationEffect.Instance.SetWeight(1f);
+        }
     }
 
     public void Update() {
@@ -56,7 +57,7 @@ public class Building : MonoBehaviour
     }
 
     private void OnMouseEnter() {
-        ShowBuildingDemolishButton();   
+        ShowBuildingDemolishButton();
     }
     private void OnMouseExit() {
         HideBuildingDemolishButton();

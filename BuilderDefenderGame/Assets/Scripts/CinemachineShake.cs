@@ -24,11 +24,13 @@ public class CinemachineShake : MonoBehaviour {
         if (timer < timerMax) {
             timer += Time.deltaTime;
             float amplitude = Mathf.Lerp(startingIntensity, 0, timer / timerMax);
+            Debug.Log("Shake your booty on the floor! dým dým dým");
             cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = amplitude;
         }
     }
 
     public void ShakeCamera(float intensity, float timerMax) {
+        Debug.Log("Shaking camera!");
         this.timerMax = timerMax;
         timer = 0f;
         startingIntensity = intensity;
