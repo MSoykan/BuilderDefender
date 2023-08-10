@@ -59,6 +59,10 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    private void HitEnemy() {
+
+    }
+
     private void HandleMovement() {
         if (targetTransform != null) {
             Vector3 moveDir = (targetTransform.position - transform.position).normalized;
