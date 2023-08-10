@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+
     public static Enemy Create(Vector3 position) {
         Transform pfEnemy = Resources.Load<Transform>("pfEnemy");
         Transform enemyTransform = Instantiate(pfEnemy, position, Quaternion.identity);
@@ -12,11 +13,14 @@ public class Enemy : MonoBehaviour {
         return enemy;
     }
 
+    private float hitTargetTimer;
+    private float hitTargetTimerMax = 2f;
     private Rigidbody2D rb2D;
     private Transform targetTransform;
     private float lookForTargetTimer;
     private float lookForTargetTimerMax = .2f;
     private HealthSystem healthSystem;
+    [SerializeField] private Animator enemyVisualAnimator;
 
     private void Start() {
         rb2D = GetComponent<Rigidbody2D>();
@@ -26,6 +30,7 @@ public class Enemy : MonoBehaviour {
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDied += HealthSystem_OnDied;
         healthSystem.OnDamaged += HealthSystem_OnDamaged;
+        hitTargetTimer = hitTargetTimerMax;
 
         lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
     }
@@ -47,20 +52,41 @@ public class Enemy : MonoBehaviour {
     private void Update() {
         HandleMovement();
         HandleTargeting();
+        HandleHitting();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        Building building = collision.gameObject.GetComponent<Building>();
-        if (building != null) {
-            // Collided with building
-            HealthSystem buildingHealthSystem = building.GetComponent<HealthSystem>();
-            buildingHealthSystem.Damage(10);
-            this.healthSystem.Damage(999);
+    private void HandleHitting() {
+        if (targetTransform == null) return;
+        bool InAttackRange = Vector3.Distance(targetTransform.position, transform.position) < 5f;
+        enemyVisualAnimator.SetBool("Attacking", InAttackRange);
+        if (InAttackRange) {
+            Debug.Log("OPEN FIRE");
+            hitTargetTimer -= Time.deltaTime;
+            if (hitTargetTimer < 0f) {
+                HealthSystem targetHealthSystem = targetTransform.GetComponent<HealthSystem>();
+                targetHealthSystem.Damage(3);
+                hitTargetTimer = hitTargetTimerMax;
+            }
         }
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision) {
+    //    Building building = collision.gameObject.GetComponent<Building>();
+    //    if (building != null) {
+    //        // Collided with building
+    //        HealthSystem buildingHealthSystem = building.GetComponent<HealthSystem>();
+    //        buildingHealthSystem.Damage(10);
+    //        this.healthSystem.Damage(999);
+    //    }
+    //}
+
     private void HitEnemy() {
 
+
+        if (targetTransform == null) return;
+        if (Vector3.Distance(targetTransform.position, transform.position) < 1f) {
+
+        }
     }
 
     private void HandleMovement() {
