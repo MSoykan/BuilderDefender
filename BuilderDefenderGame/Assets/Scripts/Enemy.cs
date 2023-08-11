@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour {
         HandleHitting();
     }
 
-    private void HandleHitting() {
+    private void HandleHitting() { // Timer var, update'in içine attýk
         if (targetTransform == null) return;
         bool InAttackRange = Vector3.Distance(targetTransform.position, transform.position) < 5f;
         enemyVisualAnimator.SetBool("Attacking", InAttackRange);
