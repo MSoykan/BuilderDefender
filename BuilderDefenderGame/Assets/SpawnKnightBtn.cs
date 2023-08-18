@@ -12,6 +12,7 @@ public class SpawnKnightBtn : MonoBehaviour
     private void Awake() {
         transform.Find("button").GetComponent<Button>().onClick.AddListener(() => {
             Debug.Log("SpawnKnight!!!");
+
             Instantiate(villagerPrefab, spawnTransform.position, Quaternion.identity);
         });
     }
