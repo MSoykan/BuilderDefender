@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour {
         bool InAttackRange = Vector3.Distance(targetTransform.position, transform.position) < 5f;
         enemyVisualAnimator.SetBool("Attacking", InAttackRange);
         if (InAttackRange) {
-            Debug.Log("OPEN FIRE");
+            //Debug.Log("OPEN FIRE");
             hitTargetTimer -= Time.deltaTime;
             if (hitTargetTimer < 0f) {
                 HealthSystem targetHealthSystem = targetTransform.GetComponent<HealthSystem>();
