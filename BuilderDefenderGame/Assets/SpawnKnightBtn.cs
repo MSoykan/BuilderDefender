@@ -13,7 +13,8 @@ public class SpawnKnightBtn : MonoBehaviour
         transform.Find("button").GetComponent<Button>().onClick.AddListener(() => {
             Debug.Log("SpawnKnight!!!");
 
-            Instantiate(villagerPrefab, spawnTransform.position, Quaternion.identity);
+            GameObject knightGameObj =  Instantiate(villagerPrefab, spawnTransform.position, Quaternion.identity);
+            Knight knight = knightGameObj.GetComponent<Knight>();
         });
     }
 }
