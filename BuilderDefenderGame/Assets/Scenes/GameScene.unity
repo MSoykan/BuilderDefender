@@ -404,7 +404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 48.735992, y: 47.65599}
+  m_AnchoredPosition: {x: 48.735962, y: 47.65599}
   m_SizeDelta: {x: 93.472, y: 85.311}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41575667
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   m_Follow: {fileID: 701922712}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 22
+    OrthographicSize: 16.00001
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -4128,7 +4128,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 22
+  orthographic size: 16.00001
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11329,16 +11329,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4765526179066722465, guid: 6a444eae4f6f994478238423291b54c2, type: 3}
+      propertyPath: gatherPointSprite
+      value: 
+      objectReference: {fileID: 1360322284}
     - target: {fileID: 6892087453602138605, guid: 6a444eae4f6f994478238423291b54c2, type: 3}
       propertyPath: m_Name
       value: pfHQ
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586006508650922801, guid: 6a444eae4f6f994478238423291b54c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8327456875877799508, guid: 6a444eae4f6f994478238423291b54c2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -5.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2775328233088581651, guid: 6a444eae4f6f994478238423291b54c2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a444eae4f6f994478238423291b54c2, type: 3}
+--- !u!4 &1360322284 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7872996593075276864, guid: 6a444eae4f6f994478238423291b54c2, type: 3}
+  m_PrefabInstance: {fileID: 1360322283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1364793553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3024904839872336952, guid: 486ce9d0a27443b4bbdcc6f81c7ac245, type: 3}

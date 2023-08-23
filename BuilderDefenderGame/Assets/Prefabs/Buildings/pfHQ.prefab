@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 554a30a45860f494ca38586c54b7e5d9, type: 3}
+  m_Sprite: {fileID: -1797672529, guid: 92093620222ae7e48b7bbbe072868ea8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817bd2cf53b2e1f4e81939136597b8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatherPointSprite: {fileID: 5536889929546549674}
 --- !u!1 &4297928094292148074
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5536889929546549674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0.58, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -379,7 +378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817bd2cf53b2e1f4e81939136597b8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatherPointSprite: {fileID: 0}
 --- !u!1 &6498441090461017365
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -4.55}
+  m_AnchoredPosition: {x: 0, y: -5.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6892087453602138605
